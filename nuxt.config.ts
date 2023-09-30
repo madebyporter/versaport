@@ -18,15 +18,4 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/output.css'],
   devtools: { enabled: true },
-  $production: {
-    routeRules: {
-      '/**': { isr: true }
-    }
-  },
-  $development: {
-    //
-  },
-  serverMiddleware: [
-    { path: '/api', handler: '~/server/api/people.js' }, // Adjust the path and handler as needed
-  ]
 })
