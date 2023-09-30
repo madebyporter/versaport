@@ -1,0 +1,42 @@
+[
+  {
+    "header": "Versa",
+    "links": [
+      {
+        "text": "Work",
+        "url": "#work",
+        "external": false
+      },
+      {
+        "text": "What's New",
+        "url": "#new",
+        "external": false
+      },
+      {
+        "text": "Reviews",
+        "url": "#reviews",
+        "external": false
+      }
+    ]
+  },
+  {
+    "header": "Social",
+    "links": [
+      {
+        "text": "X",
+        "url": "https://www.x.com",
+        "external": true
+      },
+      {
+        "text": "Youtube",
+        "url": "https://www.youtube.com",
+        "external": true
+      },
+      {
+        "text": "Dribbble",
+        "url": "https://www.dribbble.com",
+        "external": true
+      }
+    ]
+  }
+]

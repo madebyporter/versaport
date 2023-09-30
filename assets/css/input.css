@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a, .link {
+   @apply underline font-bold underline-offset-4 hover:text-neutral-600 visited:text-black
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.section-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.section-carousel-track {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
