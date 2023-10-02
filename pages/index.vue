@@ -52,22 +52,26 @@
 
 <template>
   <main class="flex flex-col gap-0 pb-28">
-    <section class="grid grid-cols-12 gap-10 border-b-2 border-neutral-200">
-      <div class="col-start-3 col-span-9 flex flex-col gap-10 py-10">
-        <h1 class="h-12 font-bold text-2xl flex flex-row items-center">{{ pageTitle }}</h1>
+    <section class="w-full grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
+      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 py-5 sm:py-10">
+        <h1 class="h-12 font-bold text-2xl flex flex-row items-center text-center sm:text-left">{{ pageTitle }}</h1>
       </div>
     </section>
-    <section class="grid grid-cols-12 gap-10 sticky top-0 border-b-2 border-neutral-200 bg-white">
-      <div class="col-start-3 col-span-9 flex flex-col gap-10 py-10">
+    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-white">
+      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10">
         <input 
           type="text" 
           v-model="searchQuery"
-          class="w-full bg-neutral-900 text-gray-200 rounded-full text-3xl font-bold px-10 py-5 outline-8 outline-neutral-900 placeholder:text-neutral-700 focus:bg-neutral-800" 
+          class="
+            w-full bg-neutral-900 text-gray-200 rounded-full font-bold outline-8 outline-neutral-900 placeholder:text-neutral-700 focus:bg-neutral-800
+            text-lg md:text-3xl
+            px-5 py-2.5 md:py-5 md:px-10 
+          " 
           placeholder="Search by Name, Stack, Software, etc."
         />
       </div>
     </section>
-    <section class="grid grid-cols-12 gap-0">
+    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
       <Person 
         v-for="person in filteredPeople" 
         :key="person.name"
