@@ -1,16 +1,56 @@
 <script setup lang="ts">
-  import { ref, computed } from 'vue';
-  import peopleData from '~/data/people.json';
+  import { ref, computed, onMounted, onUnmounted } from 'vue';
   import Person from '~/components/person.vue';
+  import Airtable from 'airtable';
 
-  const pageTitle = ref('Find Design Engineers to connect with or hire.');
-  const searchQuery = ref(''); // The search query entered by the user
+  interface Person {
+    name: string;
+    portfolio: string;
+    twitter: string;
+    linkedin: string;
+    skills: { design: string[]; code: string[] };
+  }
+
+  // Fetch Airtable data
+  var base = new Airtable({ apiKey: 'pat6NfprbFs8mQfWc.53e811a1265e01355fdb7aa84405c73f4128ce160b475f1770b3f97a855ea15f' }).base('appKgpEdY2KYZ7WGj');
+
+  const airtableData = ref<Array<Person>>([]);
+
+  const fetchAirtableData = async () => {
+    try {
+      base('versaDesignEngineers').select({
+        maxRecords: 100,
+        view: "Grid view"
+      }).eachPage((records, fetchNextPage) => {
+        records.forEach(record => {
+          const formattedRecord = {
+            name: record.fields.Name,
+            portfolio: record.fields.Portfolio,
+            twitter: record.fields.Twitter,
+            linkedin: record.fields.Linkedin,
+            skills: {
+              design: record.fields.Design || [],  // Updated line
+              code: record.fields.Code || []  // Updated line
+            }
+          };
+          airtableData.value.push(formattedRecord);
+        });
+        fetchNextPage();
+      }, (err) => {
+        if (err) { console.error(err); return; }
+      });
+    } catch (error) {
+      console.error('Error fetching data from Airtable:', error);
+    }
+  };
+  onMounted(fetchAirtableData);
+
+  // Search
   const peopleToShow = ref(20); // The initial number of people to show
-
+  const searchQuery = ref(''); // The search query entered by the user
   const filteredPeople = computed(() => {
     const searchTerms = searchQuery.value.toLowerCase().split(' ').filter(term => term.length > 0);
-
-    return peopleData.filter(person => {
+    return airtableData.value.filter((person: Person) => {
       return searchTerms.every(term => {
         const nameMatch = person.name.toLowerCase().includes(term);
         const designMatch = person.skills.design.some(skill => skill.toLowerCase().includes(term));
@@ -20,17 +60,16 @@
     }).slice(0, peopleToShow.value);
   });
 
+  // Load 20 More People
   const loadMorePeople = () => {
     peopleToShow.value += 20; // Show 20 more people when scrolling to the bottom
   };
-
   const handleScroll = () => {
     const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 200;
     if (nearBottom) {
       loadMorePeople();
     }
   };
-
   onMounted(() => {
     window.addEventListener('scroll', handleScroll);
   });
@@ -39,6 +78,8 @@
     window.removeEventListener('scroll', handleScroll);
   });
 
+  // SEO
+  const pageTitle = ref('Find Design Engineers to connect with or hire.');
   useHead({
     title: pageTitle.value,
     meta: [
@@ -73,7 +114,7 @@
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
       <Person 
-        v-for="person in filteredPeople" 
+        v-for="person in filteredPeople"
         :key="person.name"
         v-bind="person"
       />
