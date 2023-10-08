@@ -1,18 +1,26 @@
 <script setup lang="ts">
   import { ref, computed, onMounted, onUnmounted } from 'vue';
   import Person from '~/components/person.vue';
+  import { useRuntimeConfig } from '#app';
   import Airtable from 'airtable';
 
   interface Person {
     name: string;
     portfolio: string;
-    twitter: string;
-    linkedin: string;
+    twitter?: string;
+    linkedin?: string;
+    github?: string;  
+    dribbble?: string;
+    jobType: string[];
+    deliverables?: string[];
+    industries?: string[];
     skills: { design: string[]; code: string[] };
   }
 
   // Fetch Airtable data
-  var base = new Airtable({ apiKey: 'pat6NfprbFs8mQfWc.53e811a1265e01355fdb7aa84405c73f4128ce160b475f1770b3f97a855ea15f' }).base('appKgpEdY2KYZ7WGj');
+  const { public: { AIRTABLE_API_KEY } } = useRuntimeConfig();
+  console.log("API Key: ", AIRTABLE_API_KEY);
+  var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base('appKgpEdY2KYZ7WGj');
 
   const airtableData = ref<Array<Person>>([]);
 
@@ -28,6 +36,11 @@
             portfolio: record.fields.Portfolio,
             twitter: record.fields.Twitter,
             linkedin: record.fields.Linkedin,
+            github: record.fields.Github,
+            dribbble: record.fields.Dribbble,
+            jobType: record.fields['Job Type'] || [],
+            deliverables: record.fields.Deliverables || [],
+            industries: record.fields.Industries || [],
             skills: {
               design: record.fields.Design || [],  // Updated line
               code: record.fields.Code || []  // Updated line
@@ -55,10 +68,17 @@
         const nameMatch = person.name.toLowerCase().includes(term);
         const designMatch = person.skills.design.some(skill => skill.toLowerCase().includes(term));
         const codeMatch = person.skills.code.some(skill => skill.toLowerCase().includes(term));
-        return nameMatch || designMatch || codeMatch;
+
+        const jobTypeMatch = person.jobType?.some(job => job.toLowerCase().includes(term)) ?? false;
+        const deliverablesMatch = person.deliverables?.some(deliverable => deliverable.toLowerCase().includes(term)) ?? false;
+        const industriesMatch = person.industries?.some(industry => industry.toLowerCase().includes(term)) ?? false;
+
+        return nameMatch || designMatch || codeMatch || jobTypeMatch || deliverablesMatch || industriesMatch;
       });
     }).slice(0, peopleToShow.value);
   });
+
+
 
   // Load 20 More People
   const loadMorePeople = () => {
@@ -86,7 +106,7 @@
       { name: 'description', content: 'My amazing site.' }
     ],
     bodyAttrs: {
-      class: 'test'
+      class: 'min-h-screen bg-neutral-100 tracking-tight antialiased'
     }
   });
 </script>
@@ -98,7 +118,7 @@
         <h1 class="h-12 font-bold text-2xl flex flex-row items-center text-center sm:text-left">{{ pageTitle }}</h1>
       </div>
     </section>
-    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-white">
+    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100">
       <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10">
         <input 
           type="text" 
@@ -113,11 +133,13 @@
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
-      <Person 
-        v-for="person in filteredPeople"
-        :key="person.name"
-        v-bind="person"
-      />
+      <div class="col-start-2 col-span-10 sm:col-start-3 sm:col-span-9 columns-3 gap-x-5 py-5"> 
+        <Person 
+          v-for="person in filteredPeople"
+          :key="person.name"
+          v-bind="person"
+        />
+      </div>
     </section>
   </main>
 </template>

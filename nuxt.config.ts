@@ -18,4 +18,9 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/output.css'],
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY
+    }
+  }
 })

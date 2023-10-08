@@ -11,7 +11,9 @@ export default {
     "./**/*.html",                     // Any other HTML files at the root or nested
   ],
   theme: {
-    extend: {},
+    minWidth: {
+      '1/4': '25%',
+    }
   },
   plugins: [],
 }
