@@ -133,7 +133,7 @@
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
-      <div class="col-start-2 col-span-10 sm:col-start-3 sm:col-span-9 columns-3 gap-x-5 py-5"> 
+      <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-3 gap-x-5 px-5 sm:px-0 py-5"> 
         <Person 
           v-for="person in filteredPeople"
           :key="person.name"
