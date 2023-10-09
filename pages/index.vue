@@ -1,9 +1,22 @@
 <script setup lang="ts">
   import { ref, computed, onMounted, onUnmounted } from 'vue';
   import Person from '~/components/person.vue';
+  import AddPerson from '~/components/addPerson.vue';
   import { useRuntimeConfig } from '#app';
   import Airtable from 'airtable';
+  import { inject } from 'vue';
 
+  // Add Person
+
+  const showAddPerson = inject('showAddPerson');
+  function handleShowAddPerson() {
+    showAddPerson.value = true;
+  }
+  function handleCloseAddPerson() {
+    showAddPerson.value = false;
+  }
+
+  // Fetch Airtable data
   interface Person {
     name: string;
     portfolio: string;
@@ -17,9 +30,7 @@
     skills: { design: string[]; code: string[] };
   }
 
-  // Fetch Airtable data
   const { public: { AIRTABLE_API_KEY } } = useRuntimeConfig();
-  console.log("API Key: ", AIRTABLE_API_KEY);
   var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base('appKgpEdY2KYZ7WGj');
 
   const airtableData = ref<Array<Person>>([]);
@@ -28,7 +39,9 @@
     try {
       base('versaDesignEngineers').select({
         maxRecords: 100,
-        view: "Grid view"
+        view: "Grid view",
+        filterByFormula: "{Approved} = 1",
+        sort: [{ field: "Created Time", direction: "desc" }]
       }).eachPage((records, fetchNextPage) => {
         records.forEach(record => {
           const formattedRecord = {
@@ -112,7 +125,7 @@
 </script>
 
 <template>
-  <main class="flex flex-col gap-0 pb-28">
+  <main @show-add-person="handleShowAddPerson" class="flex flex-col gap-0 pb-10">
     <section class="w-full grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
       <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 py-5 sm:py-10">
         <h1 class="h-12 font-bold text-2xl flex flex-row items-center text-center sm:text-left">{{ pageTitle }}</h1>
@@ -134,12 +147,15 @@
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
       <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-3 gap-x-5 px-5 sm:px-0 py-5"> 
-        <Person 
+        <Person
           v-for="person in filteredPeople"
           :key="person.name"
           v-bind="person"
         />
       </div>
     </section>
+    <div v-if="showAddPerson">
+      <AddPerson @close="handleCloseAddPerson" />
+    </div>
   </main>
 </template>
