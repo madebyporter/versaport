@@ -142,17 +142,21 @@
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100 z-20">
-      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10">
+      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10 relative">
         <input 
           type="text" 
           v-model="searchQuery"
           class="
             w-full bg-neutral-900 text-gray-200 rounded-full font-bold outline-8 outline-neutral-900 placeholder:text-neutral-700 focus:bg-neutral-800
             text-lg md:text-3xl
-            px-5 py-2.5 md:py-5 md:px-10 
+            px-5 py-2.5 pl-12 md:pl-16 md:py-5 md:px-10
+            z-10
           " 
           placeholder="Name, Language, Software, Industries, Deliverables"
         />
+        <span class="absolute left-10 sm:left-5 top-1/2 transform -translate-y-1/2 text-neutral-500 z-30 md:text-2xl">
+          <i class="fa-sharp fa-regular fa-magnifying-glass"></i>
+        </span>
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
