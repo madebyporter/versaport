@@ -17,6 +17,7 @@
 </script>
 
 <template> 
+  <!-- Start Card -->
   <div class="flex flex-col gap-5 justify-between bg-white mb-5 break-inside-avoid-column min-h-[216px]">
     <div class="flex flex-row gap-2.5 justify-between p-5 pb-0">
       <div class="flex flex-col items-baseline gap-1">

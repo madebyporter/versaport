@@ -160,12 +160,23 @@
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
-      <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-3 gap-x-5 px-5 sm:px-0 py-5"> 
-        <Person
-          v-for="person in filteredPeople"
-          :key="person.name"
-          v-bind="person"
-        />
+      <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-3 gap-x-5 px-5 sm:px-0 py-5">
+        <template v-if="airtableData.length === 0">
+          <!-- Generate placeholder cards dynamically based on a specified count -->
+          <div
+            v-for="index in 9"
+            :key="index"
+            class="flex flex-col gap-5 justify-center bg-white mb-5 break-inside-avoid-column min-h-[216px] items-center text-neutral-300"
+          >Stay Calm</div>
+        </template>
+        <!-- Render the Person components when data is available -->
+        <template v-else>
+          <Person
+            v-for="person in filteredPeople"
+            :key="person.name"
+            v-bind="person"
+          />
+        </template>
       </div>
     </section>
     <Modal v-if="showAddPerson" @close="handleCloseAddPerson" >
