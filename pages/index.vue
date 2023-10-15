@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref, computed, onMounted, onUnmounted } from 'vue';
+  import Modal from '~/components/modal.vue';
   import Person from '~/components/person.vue';
   import AddPerson from '~/components/addPerson.vue';
   import About from '~/components/about.vue';
@@ -140,7 +141,7 @@
         <h1 class="h-12 font-bold text-2xl flex flex-row items-center text-center sm:text-left">{{ pageTitle }}</h1>
       </div>
     </section>
-    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100 z-40">
+    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100 z-20">
       <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10">
         <input 
           type="text" 
@@ -163,11 +164,11 @@
         />
       </div>
     </section>
-    <div v-if="showAddPerson">
-      <AddPerson @close="handleCloseAddPerson" />
-    </div>
-    <div v-if="showAbout">
-      <About @close="handleCloseAbout" />
-    </div>
+    <Modal v-if="showAddPerson" @close="handleCloseAddPerson" >
+      <AddPerson />
+    </Modal>
+    <Modal v-if="showAbout" @close="handleCloseAbout">
+      <About />
+    </Modal>
   </main>
 </template>

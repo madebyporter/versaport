@@ -17,9 +17,9 @@
 </script>
 
 <template>
-  <header class="z-50 relative flex justify-center py-5 sm:py-0">
+  <header class="z-30 relative flex justify-center py-5 sm:py-0">
     <Logo />
     <NavFilter @show-add-person="handleShowAddPerson" @show-about="handleShowAbout"/>
   </header>
-  <slot :show-add-person="showAddPerson.value" :show-about="showAbout.value" :modal-count="modalCount" />
+  <slot :show-add-person="showAddPerson.value" :show-about="showAbout.value" />
 </template>

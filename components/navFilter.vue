@@ -5,17 +5,11 @@ const showAddPerson = inject('showAddPerson');  // Injecting the value
 const showAbout = inject('showAbout');  // Injecting the value
 
 function toggleAddPersonForm() {
-  if (showAbout.value) {
-    showAbout.value = false;  // Close the About modal
-  }
-  showAddPerson.value = !showAddPerson.value;  // Toggle the AddPerson modal
+  showAddPerson.value = !showAddPerson.value;  // Toggle the value
 }
 
 function toggleAboutModal() {
-  if (showAddPerson.value) {
-    showAddPerson.value = false;  // Close the AddPerson modal
-  }
-  showAbout.value = !showAbout.value;  // Toggle the About modal
+  showAbout.value = !showAbout.value;  // Toggle the value
 }
 </script>
 
