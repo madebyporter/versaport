@@ -22,8 +22,8 @@ function toggleAboutModal() {
     <div class="flex flex-col gap-4">
       <span class="hidden md:block text-xs font-semibold">ThinkVersa</span>
       <div class="flex flex-row md:flex-col gap-10 md:gap-2.5 justify-center">
-        <button @click="toggleAboutModal" class="text-white visited:text-white md:text-black md:visited:text-black text-sm font-bold no-underline flex flex-row gap-2 justify-center md:justify-start items-center w-full whitespace-nowrap">About this</button>
-        <button @click="toggleAddPersonForm" class="text-white visited:text-white md:text-black md:visited:text-black text-sm font-bold no-underline flex flex-row gap-2 justify-center md:justify-start items-center w-full whitespace-nowrap">
+        <button id="about" @click="toggleAboutModal" class="text-white visited:text-white md:text-black md:visited:text-black text-sm font-bold no-underline flex flex-row gap-2 justify-center md:justify-start items-center w-full whitespace-nowrap">About</button>
+        <button id="submit" @click="toggleAddPersonForm" class="text-white visited:text-white md:text-black md:visited:text-black text-sm font-bold no-underline flex flex-row gap-2 justify-center md:justify-start items-center w-full whitespace-nowrap">
           Submit
         </button>
       </div>

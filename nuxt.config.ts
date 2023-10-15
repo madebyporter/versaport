@@ -20,7 +20,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY
+      AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY,
+      gtagId: 'G-NWH4NW627H'
     }
   }
 })

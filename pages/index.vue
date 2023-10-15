@@ -179,7 +179,7 @@
         </template>
       </div>
     </section>
-    <Modal v-if="showAddPerson" @close="handleCloseAddPerson" >
+    <Modal v-if="showAddPerson" @close="handleCloseAddPerson">
       <AddPerson />
     </Modal>
     <Modal v-if="showAbout" @close="handleCloseAbout">
