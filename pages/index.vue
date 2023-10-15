@@ -2,18 +2,27 @@
   import { ref, computed, onMounted, onUnmounted } from 'vue';
   import Person from '~/components/person.vue';
   import AddPerson from '~/components/addPerson.vue';
+  import About from '~/components/about.vue';
   import { useRuntimeConfig } from '#app';
   import Airtable from 'airtable';
   import { inject } from 'vue';
 
   // Add Person
-
   const showAddPerson = inject('showAddPerson');
   function handleShowAddPerson() {
     showAddPerson.value = true;
   }
   function handleCloseAddPerson() {
     showAddPerson.value = false;
+  }
+
+  // About
+  const showAbout = inject('showAbout');
+  function handleShowAbout() {
+    showAbout.value = true;
+  }
+  function handleCloseAbout() {
+    showAbout.value = false;
   }
 
   // Fetch Airtable data
@@ -125,13 +134,13 @@
 </script>
 
 <template>
-  <main @show-add-person="handleShowAddPerson" class="flex flex-col gap-0 pb-10">
+  <main @show-add-person="handleShowAddPerson" @show-about="handleShowAbout" class="flex flex-col gap-0 pb-10">
     <section class="w-full grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
       <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 py-5 sm:py-10">
         <h1 class="h-12 font-bold text-2xl flex flex-row items-center text-center sm:text-left">{{ pageTitle }}</h1>
       </div>
     </section>
-    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100">
+    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100 z-40">
       <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10">
         <input 
           type="text" 
@@ -141,7 +150,7 @@
             text-lg md:text-3xl
             px-5 py-2.5 md:py-5 md:px-10 
           " 
-          placeholder="Search by Name, Stack, Software, etc."
+          placeholder="Name, Language, Software, Industries, Deliverables"
         />
       </div>
     </section>
@@ -156,6 +165,9 @@
     </section>
     <div v-if="showAddPerson">
       <AddPerson @close="handleCloseAddPerson" />
+    </div>
+    <div v-if="showAbout">
+      <About @close="handleCloseAbout" />
     </div>
   </main>
 </template>

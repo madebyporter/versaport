@@ -43,29 +43,31 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="flex flex-row gap-5 overflow-x-auto no-scrollbar p-5 pt-0">
-      <div v-if="props.skills.design && props.skills.design.length > 0" class="flex flex-row gap-2 items-center">
-        <h3 class="font-bold text-sm">Design</h3>
-        <div class="flex gap-2">
-          <Tag v-for="(skill, index) in props.skills.design.slice(0, 3)" :key="index" :value="skill" />
+    <div class="after:bg-gradient-to-r relative after:content-[''] after:h-full after:w-40 after:absolute after:right-0 after:top-0 after:from-transparent after:to-white after:pointer-events-none	">
+      <div class="p-5 pt-0 pr-10 flex flex-row gap-2 no-scrollbar overflow-x-auto w-full z-10">
+        <div v-if="props.skills.design && props.skills.design.length > 0" class="flex flex-col gap-1 items-start">
+          <h3 class="font-bold text-xs text-neutral-300 sticky left-0">Design</h3>
+          <div class="flex gap-2">
+            <Tag v-for="(skill, index) in props.skills.design.slice(0, 3)" :key="index" :value="skill" />
+          </div>
         </div>
-      </div>
-      <div v-if="props.skills.code && props.skills.code.length > 0" class="flex flex-row gap-2 items-center">
-        <h3 class="font-bold text-sm">Code</h3>
-        <div class="flex gap-2">
-          <Tag v-for="(skill, index) in props.skills.code.slice(0, 3)" :key="index" :value="skill" />
+        <div v-if="props.skills.code && props.skills.code.length > 0" class="flex flex-col gap-1 items-start">
+          <h3 class="font-bold text-xs text-neutral-300 sticky left-0">Code</h3>
+          <div class="flex gap-2">
+            <Tag v-for="(skill, index) in props.skills.code.slice(0, 3)" :key="index" :value="skill" />
+          </div>
         </div>
-      </div>
-      <div v-if="props.deliverables && props.deliverables.length > 0" class="flex flex-row gap-2 items-center">
-        <h3 class="font-bold text-sm">Deliverables</h3>
-        <div class="flex gap-2">
-          <Tag v-for="(deliverables, index) in props.deliverables.slice(0, 3)" :key="index" :value="deliverables" />
+        <div v-if="props.deliverables && props.deliverables.length > 0" class="flex flex-col gap-1 items-start">
+          <h3 class="font-bold text-xs text-neutral-300 sticky left-0">Deliverables</h3>
+          <div class="flex gap-2">
+            <Tag v-for="(deliverables, index) in props.deliverables.slice(0, 3)" :key="index" :value="deliverables" />
+          </div>
         </div>
-      </div>
-      <div v-if="props.industries && props.industries.length > 0" class="flex flex-row gap-2 items-center">
-        <h3 class="font-bold text-sm">Industries</h3>
-        <div class="flex gap-2">
-          <Tag v-for="(industries, index) in props.industries.slice(0, 3)" :key="index" :value="industries" />
+        <div v-if="props.industries && props.industries.length > 0" class="flex flex-col gap-1 items-start">
+          <h3 class="font-bold text-xs text-neutral-300 sticky left-0">Industries</h3>
+          <div class="flex gap-2">
+            <Tag v-for="(industries, index) in props.industries.slice(0, 3)" :key="index" :value="industries" />
+          </div>
         </div>
       </div>
     </div>

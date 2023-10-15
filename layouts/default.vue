@@ -5,19 +5,21 @@
 
   const showAddPerson = ref(false);
   provide('showAddPerson', showAddPerson);
-
   function handleShowAddPerson() {
     showAddPerson.value = true;
   }
 
+  const showAbout = ref(false);
+  provide('showAbout', showAbout);
+  function handleShowAbout() {
+    showAbout.value = true;
+  }
 </script>
 
 <template>
   <header class="z-50 relative flex justify-center py-5 sm:py-0">
     <Logo />
-    <NavFilter @show-add-person="handleShowAddPerson"/>
+    <NavFilter @show-add-person="handleShowAddPerson" @show-about="handleShowAbout"/>
   </header>
-  <slot :show-add-person="showAddPerson.value" />
-
-  
+  <slot :show-add-person="showAddPerson.value" :show-about="showAbout.value" :modal-count="modalCount" />
 </template>
