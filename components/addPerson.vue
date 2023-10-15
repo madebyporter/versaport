@@ -76,6 +76,7 @@
             Email: formData.value.Email,
             Portfolio: formData.value.Portfolio,
             Marketing: formData.value.Marketing,
+            Message: formData.value.Message,
           }
         }
       ]);
