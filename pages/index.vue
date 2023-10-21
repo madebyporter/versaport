@@ -135,10 +135,14 @@
 </script>
 
 <template>
-  <main @show-add-person="handleShowAddPerson" @show-about="handleShowAbout" class="flex flex-col gap-0 pb-10">
-    <section class="w-full grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
-      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 py-5 sm:py-10">
-        <h1 class="h-12 font-bold text-2xl flex flex-row items-center text-center sm:text-left">{{ pageTitle }}</h1>
+  <main @show-add-person="handleShowAddPerson" @show-about="handleShowAbout" class="flex flex-col gap-0 pb-10 font-satoshi">
+    <section class="w-full md:min-h-[130px] grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
+      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-7 flex flex-col md:flex-row items-center gap-10 py-32">
+        <h1 class="font-medium text-8xl flex flex-row flex-wrap items-center text-center sm:text-left leading-none">
+          <span class="inline">Find Design&nbsp;</span>
+          <span class="inline">Engineers to&nbsp;</span>
+          <span class="inline">Scale Quickly.</span>
+        </h1>
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100 z-20">
@@ -160,7 +164,7 @@
       </div>
     </section>
     <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
-      <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-3 gap-x-5 px-5 sm:px-0 py-5">
+      <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-2 gap-x-5 px-5 sm:px-0 py-5">
         <template v-if="airtableData.length === 0">
           <!-- Generate placeholder cards dynamically based on a specified count -->
           <div

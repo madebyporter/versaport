@@ -13,11 +13,14 @@ export default {
   theme: {
     extend: { 
       colors: {
-        'versa-black': '#222222',
+        'versa-black': '#111',
         'versa-gray-light': '#F3F4F5',
         'versa-white': '#fff',
         'versa-blue': '#007BFF',
         'versa-skyblue': '#B2D7FF',
+      },
+      fontFamily: {
+        'satoshi': ['Satoshi', 'sans-serif']
       },
       minWidth: {
         '1/4': '25%',

@@ -1,5 +1,5 @@
 <template>
-  <span class="text-sm rounded-md border border-neutral-200 flex justify-center items-center px-2 py-1 whitespace-nowrap">
+  <span class="text-xs rounded-md border border-neutral-200 flex justify-center items-center px-2 py-1 whitespace-nowrap uppercase tracking-wider">
     {{ value }}
   </span>
 </template>
