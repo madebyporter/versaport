@@ -122,7 +122,7 @@
   });
 
   // SEO
-  const pageTitle = ref('Find Design Engineers to connect with or hire.');
+  const pageTitle = ref('Find Design Engineers to scale quickly with.');
   useHead({
     title: pageTitle.value,
     meta: [
