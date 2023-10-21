@@ -44,8 +44,8 @@
   <div class="flex flex-col gap-20 justify-between bg-versa-black text-versa-white rounded-xl mb-5 break-inside-avoid-column min-h-[216px] overflow-hidden">
     <div class="flex flex-row gap-2.5 justify-between p-10 pb-0">
       <div class="flex flex-col items-baseline gap-5">
-        <h2 class="font-bold text-6xl flex flex-col"><span>{{ formattedName.first }}</span> <span>{{ formattedName.last }}</span></h2>
-        <p v-if="props.jobType && props.jobType.length > 0" class="font-medium tracking-normal text-xl">
+        <h2 class="font-bold text-4xl lg:text-6xl flex flex-col"><span>{{ formattedName.first }}</span> <span>{{ formattedName.last }}</span></h2>
+        <p v-if="props.jobType && props.jobType.length > 0" class="font-medium tracking-normal text-lg lg:text-xl">
           {{ props.jobType.join(' / ') }}
         </p>
       </div>
