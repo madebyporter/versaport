@@ -11,9 +11,18 @@ export default {
     "./**/*.html",                     // Any other HTML files at the root or nested
   ],
   theme: {
-    minWidth: {
-      '1/4': '25%',
-    }
+    extend: { 
+      colors: {
+        'versa-black': '#222222',
+        'versa-gray-light': '#F3F4F5',
+        'versa-white': '#fff',
+        'versa-blue': '#007BFF',
+        'versa-skyblue': '#B2D7FF',
+      },
+      minWidth: {
+        '1/4': '25%',
+      }
+    },
   },
   plugins: [],
 }
