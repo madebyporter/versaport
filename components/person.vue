@@ -46,7 +46,7 @@
     <div class="flex flex-row gap-2.5 justify-between p-10 pb-0">
       <div class="flex flex-col items-baseline gap-5">
         <h2 class="font-bold text-4xl lg:text-5xl flex flex-col"><span>{{ formattedName.first }}</span> <span>{{ formattedName.last }}</span></h2>
-        <p v-if="props.jobType && props.jobType.length > 0" class="font-medium tracking-normal text-md lg:text-lg">
+        <p v-if="props.jobType && props.jobType.length > 0" class="font-medium tracking-normal text-md lg:text-lg lg:indent-0.5">
           {{ props.jobType.join(' / ') }}
         </p>
       </div>

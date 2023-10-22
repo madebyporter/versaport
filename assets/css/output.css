@@ -1099,6 +1099,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -1137,6 +1142,10 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
 }
 
 .text-left {
@@ -1383,6 +1392,16 @@ a:hover, .link:hover {
   color: transparent;
 }
 
+.placeholder\:text-neutral-500::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(115 115 115 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-neutral-500::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(115 115 115 / var(--tw-text-opacity));
+}
+
 .after\:pointer-events-none::after {
   content: var(--tw-content);
   pointer-events: none;
@@ -1535,6 +1554,11 @@ a:hover, .link:hover {
     padding-bottom: 2.5rem;
   }
 
+  .sm\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
   .sm\:text-left {
     text-align: left;
   }
@@ -1601,8 +1625,32 @@ a:hover, .link:hover {
     padding-bottom: 1.25rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .md\:py-2\.5 {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+
   .md\:pl-16 {
     padding-left: 4rem;
+  }
+
+  .md\:pl-12 {
+    padding-left: 3rem;
   }
 
   .md\:text-2xl {
@@ -1614,9 +1662,30 @@ a:hover, .link:hover {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:min-h-\[126px\] {
+    min-height: 126px;
+  }
+
+  .lg\:indent-1 {
+    text-indent: 0.25rem;
+  }
+
+  .lg\:indent-0 {
+    text-indent: 0px;
+  }
+
+  .lg\:indent-0\.5 {
+    text-indent: 0.125rem;
+  }
+
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
