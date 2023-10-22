@@ -13,9 +13,10 @@ export default {
   theme: {
     extend: { 
       colors: {
-        'versa-black': '#111',
+        'versa-black': '#111111',
         'versa-gray-light': '#F3F4F5',
         'versa-white': '#fff',
+        'versa-dark-white': '#E4E6EF',
         'versa-blue': '#007BFF',
         'versa-skyblue': '#B2D7FF',
       },

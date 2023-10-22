@@ -25,7 +25,7 @@
   <div>    
     <div class="min-w-[280px] max-w-[580px] mx-auto">
       <div class="flex flex-col gap-5">
-        <article class="flex flex-col gap-2.5">
+        <article class="flex flex-col gap-2.5 font-medium">
           <h2 class="font-bold text-xl text-left">About Me</h2>
           <p>I'm Chris Porter, the founder of <a href="https://www.madebyporter.com" target="_blank">Made by Porter</a>. I started as a freelance design engineer in 2004, working on various projects, from design to development. Over time, I've focused on software for productivity and e-commerce.</p>
           <p>My goal is to facilitate collaboration between designers and developers. I've curated a list of design engineers who, like me, value the synergy of small teams and a deep understanding of both design and development.</p>

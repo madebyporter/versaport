@@ -2,6 +2,7 @@
   import { ref, onMounted, onUnmounted, defineEmits } from 'vue';
   import axios from 'axios';
   import Airtable from 'airtable';
+  import FormInput from '~/components/formInput.vue';
 
   const { public: { AIRTABLE_API_KEY } } = useRuntimeConfig();
   var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base('appKgpEdY2KYZ7WGj');
@@ -97,38 +98,13 @@
         <h2 class="font-bold text-xl text-left">Submit a Design Engineer</h2>
         <p class="font-medium text-md text-left">Please submit you or a person you think is a great Design Engineer. This means a person that can design and code, as two specialties, done together.</p>
       </div>
-      <fieldset class="relative w-full">
-        <input id="name" name="name" v-model="formData.Name" placeholder="Chris Campbell" class="peer border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-full" :class="{ 'has-text-inside': formData.Name !== '' }">
-        <label class="peer-focus:top-6 peer-[.has-text-inside]:top-6 peer-focus:text-neutral-600 absolute top-[50%] translate-y-[-50%] left-4 -z-2 text-sm transition-all pointer-events-none w-full" for="name">Full Name</label>
-      </fieldset>
+      <FormInput v-model="formData.Name" type="text" placeholder="Chris Campbell" label="Full Name" />
+      <FormInput v-model="formData.Email" type="email" placeholder="chris@campbell.com" label="Email Address" />
+      <FormInput v-model="formData.Portfolio" type="url" placeholder="https://chriscampbell.com" label="Portfolio Link" />
+      <FormInput v-model="formData.Message" type="textarea" placeholder="Add your top 3 design and top 3 coding stacks, languages, software and industries here." label="Stack/Languages/Software" />
+      <FormInput v-model="formData.Marketing" type="checkbox" label="Subscribe to get future lists of the latest design engineers in your inbox." />
 
-      <fieldset class="relative w-full">
-        <input id="email" v-model="formData.Email" placeholder="chris@campbell.com" class="peer border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-full" :class="{ 'has-text-inside': formData.Email !== '' }">
-        <label class="peer-focus:top-6 peer-[.has-text-inside]:top-6 peer-focus:text-neutral-600 absolute top-[50%] translate-y-[-50%] left-4 -z-2 text-sm transition-all pointer-events-none w-full" for="name">Email Address</label>
-      </fieldset>
-
-      <fieldset class="relative w-full">
-        <input id="portfolio" ref="portfolioInput" v-model="formData.Portfolio" @focus="handleFocus" placeholder="https://chriscampbell.com" class="peer border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-full" :class="{ 'has-text-inside': formData.Portfolio !== '' }">
-        <label class="peer-focus:top-6 peer-[.has-text-inside]:top-6 peer-focus:text-neutral-600 absolute top-[50%] translate-y-[-50%] left-4 -z-2 text-sm transition-all pointer-events-none w-full" for="name">Portfolio Link</label>
-      </fieldset>
-      
-      <fieldset class="relative w-full h-auto">
-        <textarea
-          id="message"
-          v-model="formData.Message"
-          placeholder="Add your top 3 design and top 3 coding stacks, languages, software and industries here. I'll review and add them if approved."
-          class="peer border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-full h-[74px] focus:h-32" 
-          :class="{ 'has-text-inside': formData.Message !== '' }"
-        ></textarea>
-        <label class="peer-focus:top-6 peer-[.has-text-inside]:top-6 peer-focus:text-neutral-600 absolute top-[45%] translate-y-[-50%] left-4 -z-2 text-sm transition-all pointer-events-none w-full" for="message">Stack/Languages/Software</label>
-      </fieldset>
-
-      <fieldset class="relative w-full flex flex-row py-5 gap-2 items-center">
-        <input type="checkbox" id="marketing" v-model="formData.Marketing" class="border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-[16px] h-[16px]">
-        <label class="text-md transition-all cursor-pointer w-full" for="marketing">Subscribe to get future lists of the latest design engineers in your inbox.</label>
-      </fieldset>
-
-      <button type="submit" :disabled="isSubmitting" class="rounded-lg bg-neutral-900 hover:bg-neutral-700 text-white py-5">Submit</button>
+      <button type="submit" :disabled="isSubmitting" class="rounded-full bg-neutral-900 hover:bg-neutral-700 text-white px-5 py-2.5 uppercase">Submit</button>
     </form>
     <div v-if="submitStatus">
       {{ submitStatus }}

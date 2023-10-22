@@ -91,11 +91,9 @@
         const nameMatch = person.name.toLowerCase().includes(term);
         const designMatch = person.skills.design.some(skill => skill.toLowerCase().includes(term));
         const codeMatch = person.skills.code.some(skill => skill.toLowerCase().includes(term));
-
         const jobTypeMatch = person.jobType?.some(job => job.toLowerCase().includes(term)) ?? false;
         const deliverablesMatch = person.deliverables?.some(deliverable => deliverable.toLowerCase().includes(term)) ?? false;
         const industriesMatch = person.industries?.some(industry => industry.toLowerCase().includes(term)) ?? false;
-
         return nameMatch || designMatch || codeMatch || jobTypeMatch || deliverablesMatch || industriesMatch;
       });
     }).slice(0, peopleToShow.value);
@@ -122,7 +120,7 @@
   });
 
   // SEO
-  const pageTitle = ref('Find Design Engineers to scale quickly with.');
+  const pageTitle = ref('Find Design Engineers To Scale Quickly.');
   useHead({
     title: pageTitle.value,
     meta: [
@@ -137,11 +135,9 @@
 <template>
   <main @show-add-person="handleShowAddPerson" @show-about="handleShowAbout" class="flex flex-col gap-0 pb-10 font-satoshi">
     <section class="w-full md:min-h-[130px] grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
-      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-7 flex flex-col md:flex-row items-center gap-10 py-32">
-        <h1 class="font-medium text-8xl flex flex-row flex-wrap items-center text-center sm:text-left leading-none">
-          <span class="inline">Find Design&nbsp;</span>
-          <span class="inline">Engineers to&nbsp;</span>
-          <span class="inline">Scale Quickly.</span>
+      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-7 flex flex-col md:flex-row items-center gap-10 px-2.5 py-5">
+        <h1 class="font-medium text-xl md:text-3xl flex flex-row flex-wrap items-center text-center sm:text-left leading-none">
+          {{pageTitle}}
         </h1>
       </div>
     </section>
@@ -170,7 +166,7 @@
           <div
             v-for="index in 9"
             :key="index"
-            class="flex flex-col gap-5 justify-center bg-white mb-5 break-inside-avoid-column min-h-[216px] items-center text-neutral-300"
+            class="flex flex-col gap-5 justify-center bg-white mb-5 break-inside-avoid-column min-h-[216px] items-center text-neutral-300 rounded-xl"
           >Stay Calm</div>
         </template>
         <!-- Render the Person components when data is available -->

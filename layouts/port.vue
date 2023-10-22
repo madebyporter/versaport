@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import Nav from '~/components/nav.vue';
+  import navPortfolio from '~/components/navPortfolio.vue';
 </script>
 
 <template>
   <header>
     <Logo />
-    <Nav />
+    <navPortfolio />
   </header>
   <slot />
 </template>
