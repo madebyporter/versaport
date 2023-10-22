@@ -120,7 +120,7 @@
   });
 
   // SEO
-  const pageTitle = ref('Find Design Engineers To Scale Quickly.');
+  const pageTitle = ref('Find Design Engineers To Scale Quickly');
   useHead({
     title: pageTitle.value,
     meta: [
