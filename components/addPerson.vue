@@ -34,7 +34,7 @@
     Name: '',
     Email: '',
     Portfolio: '',
-    Marketing: '',
+    Marketing: false,
     Message: '',
   });
 

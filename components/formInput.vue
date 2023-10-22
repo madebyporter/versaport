@@ -29,17 +29,17 @@ const emit = defineEmits(['update:modelValue']);
 
     <template v-else-if="type === 'textarea'">
       <textarea :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :placeholder="placeholder"
-        class="peer border border-neutral-200 hover:border-neutral-300 px-4 pt-10 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-full h-[74px] focus:h-32 font-bold"
+        class="peer border border-neutral-200 hover:border-neutral-300 px-4 pt-10 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-full h-32 font-bold"
         :class="{ 'has-text-inside': modelValue !== '' }"></textarea>
       <label
-        class="peer-focus:top-6 peer-[.has-text-inside]:top-6 peer-focus:text-neutral-600 absolute top-[45%] translate-y-[-50%] left-4 -z-2 text-sm transition-all pointer-events-none w-full font-medium"
+        class="top-4 text-neutral-600 absolute left-4 -z-2 text-sm transition-all pointer-events-none w-full font-medium"
         :for="type">{{ label }}</label>
     </template>
 
     <template v-else-if="type === 'checkbox'">
       <input type="checkbox" :checked="modelValue" @change="$emit('update:modelValue', $event.target.checked)"
-        class="border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-[16px] h-[16px]">
-      <label class="text-md transition-all cursor-pointer w-full font-medium" :for="type">{{ label }}</label>
+        class="border border-neutral-200 hover:border-neutral-300 px-4 pt-8 pb-4 rounded-md outline-neutral-950 placeholder:text-transparent focus:placeholder:text-neutral-400 w-[16px] h-[16px]" :id="label">
+      <label class="text-md transition-all cursor-pointer w-full font-medium" :for="label">{{ label }}</label>
     </template>
 
     <template v-else-if="type === 'select' && options">
