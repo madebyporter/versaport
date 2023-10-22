@@ -166,7 +166,7 @@
           <div
             v-for="index in 9"
             :key="index"
-            class="flex flex-col gap-5 justify-center bg-white mb-5 break-inside-avoid-column min-h-[216px] items-center text-neutral-300"
+            class="flex flex-col gap-5 justify-center bg-white mb-5 break-inside-avoid-column min-h-[216px] items-center text-neutral-300 rounded-xl"
           >Stay Calm</div>
         </template>
         <!-- Render the Person components when data is available -->
