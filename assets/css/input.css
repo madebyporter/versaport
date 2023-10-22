@@ -48,6 +48,10 @@
   }
 }
 
+::selection {
+  @apply text-versa-skyblue bg-versa-blue;
+}
+
 a, .link {
    @apply underline font-bold underline-offset-4 hover:text-neutral-600 visited:text-black
 }

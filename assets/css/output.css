@@ -636,16 +636,8 @@ video {
   top: 1.25rem;
 }
 
-.top-\[45\%\] {
-  top: 45%;
-}
-
 .top-\[50\%\] {
   top: 50%;
-}
-
-.top-6 {
-  top: 1.5rem;
 }
 
 .z-10 {
@@ -737,12 +729,12 @@ video {
   height: 3rem;
 }
 
-.h-\[16px\] {
-  height: 16px;
+.h-32 {
+  height: 8rem;
 }
 
-.h-\[74px\] {
-  height: 74px;
+.h-\[16px\] {
+  height: 16px;
 }
 
 .h-auto {
@@ -751,10 +743,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-32 {
-  height: 8rem;
 }
 
 .min-h-\[216px\] {
@@ -1246,6 +1234,11 @@ video {
   color: rgb(115 115 115 / var(--tw-text-opacity));
 }
 
+.text-neutral-600 {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 82 / var(--tw-text-opacity));
+}
+
 .text-versa-black {
   --tw-text-opacity: 1;
   color: rgb(17 17 17 / var(--tw-text-opacity));
@@ -1254,11 +1247,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-neutral-600 {
-  --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity));
 }
 
 .no-underline {
@@ -1337,6 +1325,20 @@ video {
   src: url('../fonts/satoshi/Satoshi-Bold.woff2') format('woff2'),
     url('../fonts/satoshi/Satoshi-Bold.woff') format('woff'),
     url('../fonts/satoshi/Satoshi-Bold.ttf') format('truetype');
+}
+
+::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 123 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(178 215 255 / var(--tw-text-opacity));
+}
+
+::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 123 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(178 215 255 / var(--tw-text-opacity));
 }
 
 a, .link {
@@ -1452,10 +1454,6 @@ a:hover, .link:hover {
 .hover\:bg-neutral-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
-}
-
-.focus\:h-32:focus {
-  height: 8rem;
 }
 
 .focus\:bg-neutral-800:focus {
