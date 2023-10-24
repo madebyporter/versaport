@@ -14,7 +14,8 @@
     jobType: string[],
     deliverables?: string[],
     industries?: string[],
-    skills: { design: string[], code: string[] }
+    skills: { design: string[], code: string[] },
+    avatar?: string,
   }>();
 
   // Split name into first name and last name
@@ -44,12 +45,18 @@
   <!-- Start Card -->
   <div class="flex flex-col gap-20 justify-between bg-versa-white text-versa-black rounded-xl mb-5 break-inside-avoid-column min-h-[216px] overflow-hidden">
     <div class="flex flex-row gap-2.5 justify-between p-10 pb-0">
-      <div class="flex flex-col items-baseline gap-5">
-        <h2 class="font-bold text-4xl lg:text-5xl flex flex-col"><span>{{ formattedName.first }}</span> <span>{{ formattedName.last }}</span></h2>
-        <p v-if="props.jobType && props.jobType.length > 0" class="font-medium tracking-normal text-md lg:text-lg lg:indent-0.5">
-          {{ props.jobType.join(' / ') }}
-        </p>
+      <div class="flex flex-col gap-5">
+        <div class="w-[80px] h-[80px] overflow-hidden rounded-full">
+          <img :src="props.avatar" :alt="props.name" class="w-full h-full" />
+        </div>
+        <div class="flex flex-col items-baseline gap-5">
+          <h2 class="font-bold text-4xl lg:text-5xl flex flex-col"><span>{{ formattedName.first }}</span> <span>{{ formattedName.last }}</span></h2>
+          <p v-if="props.jobType && props.jobType.length > 0" class="font-medium tracking-normal text-md lg:text-lg lg:indent-0.5">
+            {{ props.jobType.join(' / ') }}
+          </p>
+        </div>
       </div>
+      
       <div class="flex flex-col gap-2.5">
         <SocialLink v-if="props.portfolio" :link="props.portfolio" iconClasses="fa-sharp fa-light fa-house text-versa-black" />
         <SocialLink v-if="props.twitter" :link="props.twitter" iconClasses="fa-brands fa-x-twitter text-versa-black" />

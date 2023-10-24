@@ -38,6 +38,7 @@
     deliverables?: string[];
     industries?: string[];
     skills: { design: string[]; code: string[] };
+    avatar?: string;
   }
 
   const { public: { AIRTABLE_API_KEY } } = useRuntimeConfig();
@@ -67,7 +68,8 @@
             skills: {
               design: record.fields.Design || [],  // Updated line
               code: record.fields.Code || []  // Updated line
-            }
+            },
+            avatar: record.fields.Avatar && record.fields.Avatar[0] ? record.fields.Avatar[0].url : null,
           };
           airtableData.value.push(formattedRecord);
         });
