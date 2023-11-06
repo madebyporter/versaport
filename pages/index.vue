@@ -1,191 +1,63 @@
 <script setup lang="ts">
-  import { ref, computed, onMounted, onUnmounted } from 'vue';
-  import Modal from '~/components/modal.vue';
-  import Person from '~/components/person.vue';
-  import AddPerson from '~/components/addPerson.vue';
-  import About from '~/components/about.vue';
-  import { useRuntimeConfig } from '#app';
-  import Airtable from 'airtable';
-  import { inject } from 'vue';
+  import SectionTitle from '~/components/sectionTitle.vue'
+  import Hero from '~/components/hero.vue'
+  import Work from '~/components/work.vue'
+  import Content from '~/components/content.vue'
 
-  // Add Person
-  const showAddPerson = inject('showAddPerson');
-  function handleShowAddPerson() {
-    showAddPerson.value = true;
-  }
-  function handleCloseAddPerson() {
-    showAddPerson.value = false;
-  }
+  const pageTitle = ref('Index')
 
-  // About
-  const showAbout = inject('showAbout');
-  function handleShowAbout() {
-    showAbout.value = true;
-  }
-  function handleCloseAbout() {
-    showAbout.value = false;
-  }
-
-  // Fetch Airtable data
-  interface Person {
-    name: string;
-    portfolio: string;
-    twitter?: string;
-    linkedin?: string;
-    github?: string;  
-    dribbble?: string;
-    jobType: string[];
-    deliverables?: string[];
-    industries?: string[];
-    skills: { design: string[]; code: string[] };
-    avatar?: string;
-  }
-
-  const { public: { AIRTABLE_API_KEY } } = useRuntimeConfig();
-  var base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base('appKgpEdY2KYZ7WGj');
-
-  const airtableData = ref<Array<Person>>([]);
-
-  const fetchAirtableData = async () => {
-    try {
-      base('versaDesignEngineers').select({
-        maxRecords: 100,
-        view: "Grid view",
-        filterByFormula: "{Approved} = 1",
-        sort: [{ field: "Created Time", direction: "desc" }]
-      }).eachPage((records, fetchNextPage) => {
-        records.forEach(record => {
-          const formattedRecord = {
-            name: record.fields.Name,
-            portfolio: record.fields.Portfolio,
-            twitter: record.fields.Twitter,
-            linkedin: record.fields.Linkedin,
-            github: record.fields.Github,
-            dribbble: record.fields.Dribbble,
-            jobType: record.fields['Job Type'] || [],
-            deliverables: record.fields.Deliverables || [],
-            industries: record.fields.Industries || [],
-            skills: {
-              design: record.fields.Design || [],  // Updated line
-              code: record.fields.Code || []  // Updated line
-            },
-            avatar: record.fields.Avatar && record.fields.Avatar[0] ? record.fields.Avatar[0].url : null,
-          };
-          airtableData.value.push(formattedRecord);
-        });
-        fetchNextPage();
-      }, (err) => {
-        if (err) { console.error(err); return; }
-      });
-    } catch (error) {
-      console.error('Error fetching data from Airtable:', error);
-    }
-  };
-  onMounted(fetchAirtableData);
-
-  // Search
-  const peopleToShow = ref(20); // The initial number of people to show
-  const searchQuery = ref(''); // The search query entered by the user
-  const filteredPeople = computed(() => {
-    const searchTerms = searchQuery.value.toLowerCase().split(' ').filter(term => term.length > 0);
-    return airtableData.value.filter((person: Person) => {
-      return searchTerms.every(term => {
-        const nameMatch = person.name.toLowerCase().includes(term);
-        const designMatch = person.skills.design.some(skill => skill.toLowerCase().includes(term));
-        const codeMatch = person.skills.code.some(skill => skill.toLowerCase().includes(term));
-        const jobTypeMatch = person.jobType?.some(job => job.toLowerCase().includes(term)) ?? false;
-        const deliverablesMatch = person.deliverables?.some(deliverable => deliverable.toLowerCase().includes(term)) ?? false;
-        const industriesMatch = person.industries?.some(industry => industry.toLowerCase().includes(term)) ?? false;
-        return nameMatch || designMatch || codeMatch || jobTypeMatch || deliverablesMatch || industriesMatch;
-      });
-    }).slice(0, peopleToShow.value);
-  });
-
-
-
-  // Load 20 More People
-  const loadMorePeople = () => {
-    peopleToShow.value += 20; // Show 20 more people when scrolling to the bottom
-  };
-  const handleScroll = () => {
-    const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 200;
-    if (nearBottom) {
-      loadMorePeople();
-    }
-  };
-  onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
-  });
-
-  // SEO
-  const pageTitle = ref('Find Design Engineers To Scale Quickly');
   useHead({
     title: pageTitle.value,
     meta: [
       { name: 'description', content: 'My amazing site.' }
     ],
     bodyAttrs: {
-      class: 'min-h-screen bg-neutral-100 tracking-tight antialiased'
+      class: 'test'
     }
+  })
+
+  definePageMeta({
+    layout: "default",
   });
 </script>
 
 <template>
-  <main @show-add-person="handleShowAddPerson" @show-about="handleShowAbout" class="flex flex-col gap-0 pb-10 font-satoshi">
-    <section class="w-full md:min-h-[130px] grid grid-cols-4 sm:grid-cols-12 gap-0 border-b-2 border-neutral-200">
-      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-7 flex flex-col md:flex-row items-center gap-10 px-2.5 py-5">
-        <h1 class="font-medium text-xl md:text-3xl flex flex-row flex-wrap items-center text-center sm:text-left leading-none">
-          {{pageTitle}}
-        </h1>
+  <main class="flex flex-col gap-28 pb-28">
+    <section class="grid grid-cols-12 gap-10">
+      <div class="col-start-4 col-span-8 flex flex-col gap-10 py-10">
+        <h1 class="h-12 font-bold text-3xl flex flex-row items-center">{{ pageTitle }}</h1>
       </div>
     </section>
-    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0 sticky top-0 border-b-2 border-neutral-200 bg-neutral-100 z-20 lg:min-h-[126px]">
-      <div class="col-start-1 col-span-4 sm:col-start-3 sm:col-span-9 flex flex-col gap-10 p-5 sm:px-0 sm:py-10 relative">
-        <input 
-          type="text" 
-          v-model="searchQuery"
-          class="
-            w-full bg-neutral-900 text-gray-200 rounded-full font-bold outline-8 outline-neutral-900 placeholder:text-neutral-500 focus:bg-neutral-800
-            text-lg md:text-xl
-            px-5 py-2.5 pl-12 md:pl-16 md:py-2.5 md:px-10
-            z-10
-          " 
-          placeholder="Name, Language, Software, Industries, Deliverables"
-        />
-        <span class="absolute left-10 sm:left-5 top-1/2 transform -translate-y-1/2 text-neutral-500 z-30 md:text-2xl">
-          <i class="fa-sharp fa-regular fa-magnifying-glass fa-sm"></i>
-        </span>
-      </div>
+    
+    <Hero 
+      title="Showcase your best work &amp; products quickly to the world" 
+      description="Think Versa Portfolio is a web template for independent designers, engineer &amp; entrepreneurs, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
+    />
+
+    <section id="work" class="grid grid-cols-12 gap-10">
+      <SectionTitle title="Work" />
+      <Work />
     </section>
-    <section class="grid grid-cols-4 sm:grid-cols-12 gap-0">
-      <div class="col-start-1 col-span-11 sm:col-start-3 sm:col-span-9 columns-1 md:columns-2 xl:columns-2 gap-x-5 px-5 sm:px-0 py-10">
-        <template v-if="airtableData.length === 0">
-          <!-- Generate placeholder cards dynamically based on a specified count -->
-          <div
-            v-for="index in 9"
-            :key="index"
-            class="flex flex-col gap-5 justify-center bg-white mb-5 break-inside-avoid-column min-h-[216px] items-center text-neutral-300 rounded-xl"
-          >Stay Calm</div>
-        </template>
-        <!-- Render the Person components when data is available -->
-        <template v-else>
-          <Person
-            v-for="person in filteredPeople"
-            :key="person.name"
-            v-bind="person"
-          />
-        </template>
-      </div>
+    <section id="new" class="grid grid-cols-12 gap-10">
+      <SectionTitle title="What's New" />
+      <Content />
     </section>
-    <Modal v-if="showAddPerson" @close="handleCloseAddPerson">
-      <AddPerson />
-    </Modal>
-    <Modal v-if="showAbout" @close="handleCloseAbout">
-      <About />
-    </Modal>
+    <section id="testimonials" class="grid grid-cols-12 gap-10">
+      <SectionTitle title="Testimonials" />
+      <div class="col-start-1 col-end-13 overflow-hidden w-full">
+        <div class="section-carousel-track flex flex-row items-center gap-10 px-10 overflow-x-scroll">
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
+        </div>
+      </div>    
+    </section>
   </main>
 </template>

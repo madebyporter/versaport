@@ -27,16 +27,16 @@
 </script>
 
 <template>
-  <div class="col-start-4 col-span-8">
+  <div class="col-start-4 col-span-8 flex flex-col gap-20">
     <div 
       v-for="content in sortedContentData.slice(0, postsToShow)" 
       :key="content.id" 
-      class="flex flex-col gap-10"
+      class="flex flex-col gap-10 border border-neutral-200 rounded-lg p-20"
     >
       <div v-if="content.imageSrc" class="section-content-image w-full min-h-[50vh] bg-neutral-200 rounded-lg overflow-hidden">
         <img :src="content.imageSrc" :alt="content.imgAlt || 'Content image'" class="w-full h-full object-cover" />
       </div>
-      <article class="flex flex-col gap-5 mb-20">
+      <article class="flex flex-col gap-5">
         <h2 class="font-bold text-4xl">{{ content.header }}</h2>
         <div v-for="(paragraph, index) in content.paragraphs" :key="index" v-html="markdownToHtml(paragraph)" />
       </article>

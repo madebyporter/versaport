@@ -1,25 +1,11 @@
 <script setup lang="ts">
-  import Logo from '~/components/logo.vue';
-  import NavDefault from '~/components/navDefault.vue'; 
-  import { ref, provide } from 'vue';
-
-  const showAddPerson = ref(false);
-  provide('showAddPerson', showAddPerson);
-  function handleShowAddPerson() {
-    showAddPerson.value = true;
-  }
-
-  const showAbout = ref(false);
-  provide('showAbout', showAbout);
-  function handleShowAbout() {
-    showAbout.value = true;
-  }
+  import navPortfolio from '~/components/nav.vue';
 </script>
 
 <template>
-  <header class="z-30 relative flex justify-center py-5 sm:py-0">
+  <header>
     <Logo />
-    <NavDefault @show-add-person="handleShowAddPerson" @show-about="handleShowAbout"/>
+    <navPortfolio />
   </header>
-  <slot :show-add-person="showAddPerson.value" :show-about="showAbout.value" />
+  <slot />
 </template>
