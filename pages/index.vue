@@ -44,20 +44,7 @@
     </section>
     <section id="testimonials" class="grid grid-cols-12 gap-10">
       <SectionTitle title="Testimonials" />
-      <div class="col-start-1 col-end-13 overflow-hidden w-full">
-        <div class="section-carousel-track flex flex-row items-center gap-10 px-10 overflow-x-scroll">
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-          <div class="section-work-item min-h-[400px] min-w-[25vw] bg-neutral-200 rounded-lg"></div>
-        </div>
-      </div>    
+      <Testimonials />    
     </section>
   </main>
 </template>
