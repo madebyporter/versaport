@@ -41,7 +41,7 @@
       <SectionTitle title="Work" />
       <Work />
     </section>
-    <section id="testimonials" class="grid grid-cols-12 gap-10">
+    <section id="services" class="grid grid-cols-12 gap-10">
       <SectionTitle title="Services" />
       <Services />    
     </section>
