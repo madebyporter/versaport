@@ -3,6 +3,8 @@
   import Hero from '~/components/hero.vue'
   import Work from '~/components/work.vue'
   import Content from '~/components/content.vue'
+  import Services from '~/components/services.vue'
+  import Testimonials from '~/components/testimonials.vue'
 
   const pageTitle = ref('Index')
 
@@ -28,15 +30,20 @@
         <h1 class="h-12 font-bold text-3xl flex flex-row items-center">{{ pageTitle }}</h1>
       </div>
     </section>
-    
-    <Hero 
-      title="Showcase your best work &amp; products quickly to the world" 
-      description="Think Versa Portfolio is a web template for independent designers, engineer &amp; entrepreneurs, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
-    />
 
+    <section class="grid grid-cols-12 gap-10">
+      <Hero 
+        title="Showcase your best work &amp; products quickly to the world" 
+        description="Think Versa Portfolio is a web template for independent designers, engineer &amp; entrepreneurs, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
+      />
+    </section>
     <section id="work" class="grid grid-cols-12 gap-10">
       <SectionTitle title="Work" />
       <Work />
+    </section>
+    <section id="testimonials" class="grid grid-cols-12 gap-10">
+      <SectionTitle title="Services" />
+      <Services />    
     </section>
     <section id="new" class="grid grid-cols-12 gap-10">
       <SectionTitle title="What's New" />
@@ -46,5 +53,6 @@
       <SectionTitle title="Testimonials" />
       <Testimonials />    
     </section>
+    
   </main>
 </template>

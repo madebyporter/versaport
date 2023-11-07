@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Design Engineering Monthly",
+    "price": "$5,000/mo",
+    "description": "For those who need on-going design engineering work that need to iterate on software or website features.",
+    "benefits": [
+      "Limited availability",
+      "Unlimited requests",
+      "Unlimited revisions",
+      "2-3 day turnaround",
+      "Paired with designer",
+      "Managed via Slack",
+      "Pause or cancel anytime",
+      "Invite your team"
+    ],
+    "spots": 2,
+    "ctaLabel": "Subscribe Now",
+    "ctaLink": "#"
+  },
+  {
+    "name": "Design Engineering Monthly",
+    "price": "$5,000/mo",
+    "description": "For those who need on-going design engineering work that need to iterate on software or website features.",
+    "benefits": [
+      "Limited availability",
+      "Unlimited requests",
+      "Unlimited revisions",
+      "2-3 day turnaround",
+      "Paired with designer",
+      "Managed via Slack",
+      "Pause or cancel anytime",
+      "Invite your team"
+    ],
+    "spots": 2,
+    "ctaLabel": "Subscribe Now",
+    "ctaLink": "#"
+  }
+]

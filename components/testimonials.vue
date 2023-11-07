@@ -20,7 +20,7 @@
         <div class="avatar w-28 h-28 rounded-full bg-neutral-300 overflow-hidden" v-if="content.imageSrc">
           <img :src="content.imageSrc" :alt="content.name || 'Content image'" class="w-full h-full object-cover" />
         </div>
-        <blockquote class="before:content-[open-quote] after:content-[close-quote] text-center text-lg">{{ content.blockquote }}</blockquote>
+        <blockquote class="before:content-[open-quote] after:content-[close-quote] text-center text-lg leading-relaxed">{{ content.blockquote }}</blockquote>
         <div class="person flex flex-col gap-1 items-center">
           <span class="font-bold">{{ content.name }}</span>
           <span class="text-sm">{{ content.title }}</span>
