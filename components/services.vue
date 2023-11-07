@@ -18,9 +18,9 @@ import contentData from '~/data/services.json';
         <div class="columns-2 gap-2.5 leading-relaxed">
           <p v-for="benefit in content.benefits">{{ benefit }}</p>
         </div>
-        <div class="flex flex-col gap-2.5">
+        <div class="flex flex-col gap-2.5 items-start">
           <div class="text-lg">{{ content.spots }} Spots Left!</div>
-          <a :href="content.ctaLink" class="bg-black px-5 py-2 rounded-md !text-white !no-underline flex justify-center hover:bg-versa-blue">{{ content.ctaLabel }}</a>
+          <a :href="content.ctaLink" class="bg-black px-5 py-2 rounded-md !text-white !no-underline inline-flex justify-center hover:bg-versa-blue w-auto">{{ content.ctaLabel }}</a>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@
   import Content from '~/components/content.vue'
   import Services from '~/components/services.vue'
   import Testimonials from '~/components/testimonials.vue'
+  import Contact from '~/components/contact.vue'
 
   const pageTitle = ref('Index')
 
@@ -52,6 +53,10 @@
     <section id="testimonials" class="grid grid-cols-12 gap-10">
       <SectionTitle title="Testimonials" />
       <Testimonials />    
+    </section>
+    <section id="contact" class="grid grid-cols-12 gap-10">
+      <SectionTitle title="Contact" />
+      <Contact />    
     </section>
     
   </main>
