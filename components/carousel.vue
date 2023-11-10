@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="col-start-1 col-end-13 overflow-hidden w-full">
+  <div class="overflow-hidden w-full">
     <!-- Carousel Track -->
     <div class="section-carousel-track flex flex-row items-center gap-20 px-10 overflow-x-scroll">
       <!-- Loop: Carousel Items -->
@@ -17,7 +17,8 @@
           'bg-neutral-200', 
           'rounded-lg', 
           'overflow-hidden',
-          'min-h-[600px]',
+          'min-h-[300px]',
+          'md:min-h-[600px]',
           image.extraClasses
         ]"
       >

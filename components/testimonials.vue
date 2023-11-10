@@ -14,9 +14,9 @@
 </script>
 
 <template>
-  <div class="col-start-4 col-end-12 overflow-hidden w-full">
-    <div class="columns-2 gap-5">
-      <div v-for="content in sortedContentData" :key="content.id" class="min-h-[400px] min-w-[120px] border border-neutral-200 rounded-lg mb-5 break-inside-avoid p-10 flex flex-col gap-10 items-center">
+  <div class="col-start-2 col-span-10 md:col-start-4 md:col-end-12 overflow-hidden w-full">
+    <div class="md:columns-2 gap-5">
+      <div v-for="content in sortedContentData" :key="content.id" class="min-h-[400px] min-w-[120px] border border-neutral-200 rounded-lg mb-5 break-inside-avoid p-5 sm:p-10 flex flex-col gap-10 items-center">
         <div class="avatar w-28 h-28 rounded-full bg-neutral-300 overflow-hidden" v-if="content.imageSrc">
           <img :src="content.imageSrc" :alt="content.name || 'Content image'" class="w-full h-full object-cover" />
         </div>

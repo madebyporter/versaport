@@ -8,12 +8,14 @@
     return rawCarouselImages.value.map(image => {
       return {
         ...image,
-        extraClasses: image.size === 'mobile' ? 'min-w-[300px]' : 'min-w-[1000px]'
+        extraClasses: image.size === 'mobile' ? 'min-w-[200px] md:min-w-[300px]' : 'min-w-[700px] md:min-w-[1000px]'
       }
     })
   })
 </script>
 
 <template>
-  <Carousel :images="carouselImages" />
+  <div class="col-start-1 col-span-12">
+    <Carousel :images="carouselImages" />
+  </div>
 </template>

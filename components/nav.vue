@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <nav class="nav fixed bottom-10 left-10 flex flex-col gap-5">
+  <nav class="flex flex-col gap-5">
     <div v-for="section in navData" :key="section.header" class="nav-section flex flex-col gap-2.5">
       <span class="nav-header text-xs font-semibold">{{ section.header }}</span>
       <NuxtLink 
