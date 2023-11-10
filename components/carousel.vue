@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  images: Array<{ src: string, alt: string, title: string, extraClasses: string }>
+  images: Array<{ src: string, alt: string, title: string, link: string, extraClasses: string }>
 }>()
 </script>
 
@@ -15,8 +15,19 @@ const props = defineProps<{
           :class="['bg-neutral-200', 'rounded-lg', 'overflow-hidden', 'min-h-[300px]', 'md:min-h-[600px]', image.extraClasses]">
           <img :src="image.src" :alt="image.alt" class="w-full" />
         </div>
-        <!-- Project Title -->
-        <div class="text-sm self-center px-5 py-2 text-neutral-500">{{ image.title }}</div>
+        <div class="flex flex-row w-full py-2 justify-between">
+          <!-- Project Title -->
+          <div class="text-sm self-center text-neutral-500">
+            <div v-if="image.title">
+              <h3>{{ image.title }}</h3>
+            </div>
+          </div>
+          <div class="text-sm text-neutral-500 self-end">
+            <div v-if="image.link">
+              <a :href="image.link" target="_blank"><i class="fa-sharp fa-light fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

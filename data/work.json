@@ -1,48 +1,56 @@
 [
   {
     "title": "Project Name",
+    "link": "",
     "src": "https://cdn.dribbble.com/userupload/10395466/file/original-c1bdd1f7aa24de58d71fdf6d2c37736e.png?resize=2048x1536",
     "alt": "Image 1",
     "size": "desktop"
   },
   {
-    "title": "Project Name",
+    "title": "",
+    "link": "https://www.google.com",
     "src": "https://framerusercontent.com/images/Vus5ONABdk2FgGva8bXS90Q8U.png?scale-down-to=1024",
     "alt": "Image 2",
     "size": "mobile"
   },
   {
     "title": "Project Name",
+    "link": "https://www.google.com",
     "src": "https://cdn.dribbble.com/userupload/10401724/file/original-bcfc90e173edebbbbaf2c835bfcedcea.png?resize=1504x1128",
     "alt": "Image 2",
     "size": "desktop"
   },
   {
     "title": "Project Name",
+    "link": "https://www.google.com",
     "src": "https://cdn.dribbble.com/userupload/10391639/file/original-a12bdd520a9fdfda6312752c569a3177.jpg?resize=1504x1128",
     "alt": "Image 2",
     "size": "desktop"
   },
   {
     "title": "Project Name",
+    "link": "https://www.google.com",
     "src": "https://cdn.dribbble.com/userupload/10395466/file/original-c1bdd1f7aa24de58d71fdf6d2c37736e.png?resize=2048x1536",
     "alt": "Image 1",
     "size": "desktop"
   },
   {
     "title": "Project Name",
+    "link": "https://www.google.com",
     "src": "https://framerusercontent.com/images/ZXX4QJFfCe8QpY8sR7KhF4mhLjg.png?scale-down-to=1024",
     "alt": "Image 2",
     "size": "mobile"
   },
   {
     "title": "Project Name",
+    "link": "https://www.google.com",
     "src": "https://cdn.dribbble.com/userupload/10388987/file/original-80974a917f7fd7937d5b1a386f10ed2a.png?resize=2048x1536&vertical=center",
     "alt": "Image 2",
     "size": "desktop"
   },
   {
     "title": "Project Name",
+    "link": "https://www.google.com",
     "src": "https://cdn.dribbble.com/userupload/10391639/file/original-a12bdd520a9fdfda6312752c569a3177.jpg?resize=1504x1128",
     "alt": "Image 2",
     "size": "desktop"

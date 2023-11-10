@@ -779,6 +779,14 @@ video {
   flex-direction: column;
 }
 
+.place-content-end {
+  place-content: end;
+}
+
+.content-center {
+  align-content: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -811,6 +819,14 @@ video {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-stretch {
+  justify-content: stretch;
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -833,6 +849,10 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.place-self-end {
+  place-self: end;
 }
 
 .self-end {
