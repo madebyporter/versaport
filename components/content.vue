@@ -15,7 +15,7 @@
   const markdownToHtml = (markdown) => {
     let html = md.render(markdown);
     // Add Tailwind classes to <p> tags
-    html = html.replace(/<p>/g, '<p class="text-xl md:text-2xl leading-relaxed">');
+    html = html.replace(/<p>/g, '<p class="leading-relaxed md:leading-relaxed text-xl md:text-2xl">');
     return html;
   };
 
