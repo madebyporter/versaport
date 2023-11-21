@@ -1,58 +1,37 @@
 [
   {
-    "title": "Project Name",
+    "title": "Mobile Browser by Ionut Zamfir",
+    "link": "https://dribbble.com/shots/22684499-Mobile-Browser",
+    "src": "https://cdn.dribbble.com/userupload/10395466/file/original-c1bdd1f7aa24de58d71fdf6d2c37736e.png?resize=2048x1536",
+    "alt": "Mobile Browser by Ionut Zamfir",
+    "size": "desktop"
+  },
+  {
+    "title": "Bloomcatch 2.0",
     "link": "",
-    "src": "https://cdn.dribbble.com/userupload/10395466/file/original-c1bdd1f7aa24de58d71fdf6d2c37736e.png?resize=2048x1536",
-    "alt": "Image 1",
-    "size": "desktop"
-  },
-  {
-    "title": "",
-    "link": "https://www.google.com",
-    "src": "https://framerusercontent.com/images/Vus5ONABdk2FgGva8bXS90Q8U.png?scale-down-to=1024",
-    "alt": "Image 2",
+    "src": "/img/fpo-mobile-bloomcatch.png",
+    "alt": "Mobile Comp of Bloomcatch Website",
     "size": "mobile"
   },
   {
-    "title": "Project Name",
-    "link": "https://www.google.com",
+    "title": "Crypto wallet app by Anastasia Golovko",
+    "link": "https://dribbble.com/shots/22687023-Crypto-wallet-app",
     "src": "https://cdn.dribbble.com/userupload/10401724/file/original-bcfc90e173edebbbbaf2c835bfcedcea.png?resize=1504x1128",
-    "alt": "Image 2",
+    "alt": "Crypto wallet app by Anastasia Golovko",
     "size": "desktop"
   },
   {
-    "title": "Project Name",
-    "link": "https://www.google.com",
+    "title": "Gradient Bird Overlapping Color Logo by gaga_vastard",
+    "link": "https://dribbble.com/shots/22682903-Gradient-Bird-Overlapping-Color-Logo",
     "src": "https://cdn.dribbble.com/userupload/10391639/file/original-a12bdd520a9fdfda6312752c569a3177.jpg?resize=1504x1128",
-    "alt": "Image 2",
+    "alt": "Gradient Bird Overlapping Color Logo by gaga_vastard",
     "size": "desktop"
   },
   {
-    "title": "Project Name",
-    "link": "https://www.google.com",
-    "src": "https://cdn.dribbble.com/userupload/10395466/file/original-c1bdd1f7aa24de58d71fdf6d2c37736e.png?resize=2048x1536",
-    "alt": "Image 1",
-    "size": "desktop"
-  },
-  {
-    "title": "Project Name",
-    "link": "https://www.google.com",
-    "src": "https://framerusercontent.com/images/ZXX4QJFfCe8QpY8sR7KhF4mhLjg.png?scale-down-to=1024",
-    "alt": "Image 2",
-    "size": "mobile"
-  },
-  {
-    "title": "Project Name",
-    "link": "https://www.google.com",
+    "title": "Personalized Fashion Landing Page by Ahmad Sulaiman",
+    "link": "https://dribbble.com/shots/22681790-TrendTrove-Personalized-Fashion-Landing-Page",
     "src": "https://cdn.dribbble.com/userupload/10388987/file/original-80974a917f7fd7937d5b1a386f10ed2a.png?resize=2048x1536&vertical=center",
-    "alt": "Image 2",
-    "size": "desktop"
-  },
-  {
-    "title": "Project Name",
-    "link": "https://www.google.com",
-    "src": "https://cdn.dribbble.com/userupload/10391639/file/original-a12bdd520a9fdfda6312752c569a3177.jpg?resize=1504x1128",
-    "alt": "Image 2",
+    "alt": "Personalized Fashion Landing Page by Ahmad Sulaiman",
     "size": "desktop"
   }
 ]

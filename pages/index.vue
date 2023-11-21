@@ -47,8 +47,8 @@
       <SectionTitle title="Services" />
       <Services />    
     </section>
-    <section id="new" class="grid grid-cols-12 gap-5 md:gap-10">
-      <SectionTitle title="What's New" />
+    <section id="now" class="grid grid-cols-12 gap-5 md:gap-10">
+      <SectionTitle title="Now" />
       <Content />
     </section>
     <section id="testimonials" class="grid grid-cols-12 gap-5 md:gap-10">

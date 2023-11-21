@@ -13,8 +13,8 @@
         "external": false
       },
       {
-        "text": "What's New",
-        "url": "#new",
+        "text": "Now",
+        "url": "#now",
         "external": false
       },
       {
@@ -28,7 +28,7 @@
     "header": "Social",
     "links": [
       {
-        "text": "X",
+        "text": "X.com",
         "url": "https://www.x.com",
         "external": true
       },

@@ -37,11 +37,11 @@
         <img :src="content.imageSrc" :alt="content.imgAlt || 'Content image'" class="w-full h-full object-cover" />
       </div>
       <article class="flex flex-col gap-5">
-        <h3 class="font-bold text-3xl md:text-4xl">{{ content.header }}</h3>
+        <h3 class="font-bold text-2xl md:text-3xl">{{ content.header }}</h3>
         <div v-for="(paragraph, index) in content.paragraphs" :key="index" v-html="markdownToHtml(paragraph)" />
       </article>
     </div>
-    <button v-if="postsToShow < sortedContentData.length" @click="loadMore" class="font-bold w-full md:w-auto self-center	bg-neutral-100 flex px-10 py-2 justify-center items-center rounded-full text-xl md:text-2xl">
+    <button v-if="postsToShow < sortedContentData.length" @click="loadMore" class="font-bold w-full md:w-auto self-center	bg-neutral-100 hover:bg-neutral-200 flex px-10 py-2 justify-center items-center rounded-full text-xl md:text-2xl">
       Load More
     </button>
   </div>
