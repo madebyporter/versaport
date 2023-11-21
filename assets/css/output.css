@@ -1469,6 +1469,10 @@ a:hover, .link:hover {
     border-radius: 0px;
   }
 
+  .md\:border-0 {
+    border-width: 0px;
+  }
+
   .md\:bg-transparent {
     background-color: transparent;
   }
