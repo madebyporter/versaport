@@ -6,22 +6,19 @@
   import Services from '~/components/services.vue'
   import Testimonials from '~/components/testimonials.vue'
   import Contact from '~/components/contact.vue'
-
+  
+  // Set Page Title
   const pageTitle = ref('Index')
 
   useHead({
     title: pageTitle.value,
     meta: [
-      { name: 'description', content: 'My amazing site.' }
+      { name: 'description', content: 'Showcase your best work & products quickly to the world.' }
     ],
     bodyAttrs: {
       class: 'test'
     }
   })
-
-  definePageMeta({
-    layout: "default",
-  });
 </script>
 
 <template>
@@ -36,7 +33,7 @@
     <section class="grid grid-cols-12 gap-5 md:gap-10">
       <Hero 
         title="Showcase your best work &amp; products quickly to the world" 
-        description="Think Versa Portfolio is a web template for independent designers, engineer &amp; entrepreneurs, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
+        description="Versaport is a Nuxt3 template for independent design engineers, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
       />
     </section>
     <section id="work" class="grid grid-cols-12 gap-5 md:gap-10">
