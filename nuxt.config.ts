@@ -34,14 +34,6 @@ export default defineNuxtConfig({
         { hid: 'twitter:creator', name: 'twitter:creator', content: twitterCreator },
         { hid: 'twitter:image', name: 'twitter:image', content: ogImage },
       ],
-      script: [
-        {
-          // Font Awesome
-          src: 'https://kit.fontawesome.com/148ade9713.js',
-          crossorigin: 'anonymous',
-          async: true,
-        }
-      ],
     },
   },
   css: ['~/assets/css/output.css'],

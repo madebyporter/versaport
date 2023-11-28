@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import contentData from '~/data/services.json';
+  import contentData from '~/data/services.json';
 </script>
 
 <template>

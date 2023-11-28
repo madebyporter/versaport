@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
   // Define the props
   const props = defineProps<{
     title: string;
