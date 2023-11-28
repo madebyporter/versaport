@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const props = defineProps<{
-  images: Array<{ src: string, alt: string, title: string, link: string, extraClasses: string }>
-}>()
+  import { IconExternalLink } from '@tabler/icons-vue';
+  const props = defineProps<{
+    images: Array<{ src: string, alt: string, title: string, link: string, extraClasses: string }>
+  }>()
 </script>
 
 <template>
@@ -24,7 +25,9 @@ const props = defineProps<{
           </div>
           <div class="text-sm text-neutral-500 self-end">
             <div v-if="image.link">
-              <a :href="image.link" target="_blank"><i class="fa-sharp fa-light fa-arrow-up-right-from-square"></i></a>
+              <a :href="image.link" target="_blank">
+                <IconExternalLink color="black" :size="16" stroke-width="1" />
+              </a>
             </div>
           </div>
         </div>

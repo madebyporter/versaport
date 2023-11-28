@@ -1,7 +1,10 @@
+/** Add meta title, description, ogimage, site url, Twitter account and Google Analytics GTag here */
 const siteTitle = 'Versaport';
 const siteDescription = 'Showcase your best work & products quickly to the world.';
-const ogImage = '/img/og-image.jpg';
+const ogImage = '/img/og-image.jpg'; /** Place image in public/img folder */
 const site = 'https://www.thinkversa.com';
+const twitterCreator = '@madebyporter';
+const gTag = 'G-NWH4NW627H'
 
 export default defineNuxtConfig({
   app: {
@@ -28,7 +31,7 @@ export default defineNuxtConfig({
         { hid: 'twitter:site', name: 'twitter:site', content: site },
         { hid: 'twitter:url', name: 'twitter:url', content: site },
         { hid: 'twitter:domain', name: 'twitter:domain', content: site },
-        { hid: 'twitter:creator', name: 'twitter:creator', content: '@madebyporter' },
+        { hid: 'twitter:creator', name: 'twitter:creator', content: twitterCreator },
         { hid: 'twitter:image', name: 'twitter:image', content: ogImage },
       ],
       script: [
@@ -45,7 +48,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      gtagId: 'G-NWH4NW627H'
+      gtagId: gTag
     }
   }
 })

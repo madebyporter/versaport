@@ -1,6 +1,7 @@
 <script setup>
   // Import the JSON file
   import navData from '~/data/nav.json';
+  import { IconArrowUpRight } from '@tabler/icons-vue';
 </script>
 
 <template>
@@ -16,7 +17,7 @@
         :rel="link.external ? 'noopener noreferrer' : null"
       >
         {{ link.text }}
-        <i v-if="link.external" class="fa-sharp fa-regular fa-arrow-up-right"></i>
+        <IconArrowUpRight v-if="link.external" class="text-white md:text-black" :size="16" stroke-width="1" />
       </NuxtLink>
     </div>
   </nav>
