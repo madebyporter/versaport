@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import PageTitle from '~/components/pageTitle.vue'
   import SectionTitle from '~/components/sectionTitle.vue'
   import Hero from '~/components/hero.vue'
   import Work from '~/components/work.vue'
@@ -26,10 +25,11 @@
   <main class="flex flex-col gap-20 md:gap-28 pb-28">
 
     <section class="grid grid-cols-12 gap-5 md:gap-10">
-      <PageTitle 
-        :title="pageTitle" 
-      />
+      <div class="col-start-2 col-span-10 sm:col-start-4 sm:col-span-8 flex flex-col gap-10 py-5 md:py-10">
+        <h1 class="h-12 font-bold text-2xl md:text-3xl flex flex-row items-center justify-end md:justify-start w-full">{{ pageTitle }}</h1>
+      </div>
     </section>
+
     <section class="grid grid-cols-12 gap-5 md:gap-10">
       <Hero 
         title="Showcase your best work &amp; products quickly to the world" 
