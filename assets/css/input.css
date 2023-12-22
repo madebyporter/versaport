@@ -50,9 +50,9 @@
   @apply text-versa-skyblue bg-versa-blue;
 }
 
-a, .link {
+/* a, .link {
    @apply underline font-bold underline-offset-4 hover:text-neutral-600 visited:text-black
-}
+} */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .section-carousel-track::-webkit-scrollbar {

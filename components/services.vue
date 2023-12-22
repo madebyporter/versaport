@@ -18,9 +18,9 @@
         <div class="flex flex-col sm:block sm:columns-2 gap-2.5">
           <p v-for="benefit in content.benefits" class="text-md leading-relaxed">{{ benefit }}</p>
         </div>
-        <div class="flex flex-col gap-2.5 items-start">
+        <div class="flex flex-col gap-2.5">
           <div class="text-base w-full md:text-left">{{ content.spots }} Spots Left!</div>
-          <a :href="content.ctaLink" class="bg-black px-5 py-2 rounded-md !text-white !no-underline inline-flex justify-center hover:bg-versa-blue w-full">{{ content.ctaLabel }}</a>
+          <Button :content="[{ src: content.ctaLink, label: content.ctaLabel, extraClasses: '' }]"></Button>
         </div>
       </div>
     </div>
