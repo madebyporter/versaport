@@ -30,29 +30,26 @@
     url('../fonts/satoshi/Satoshi-Bold.ttf') format('truetype');
 }
 
-@layer utilities {
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-  }
+a:not(.btn) {
+  @apply underline font-bold underline-offset-4 hover:text-neutral-600 visited:text-black
 }
 
 ::selection {
   @apply text-versa-skyblue bg-versa-blue;
 }
 
-/* a, .link {
-   @apply underline font-bold underline-offset-4 hover:text-neutral-600 visited:text-black
-} */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .section-carousel-track::-webkit-scrollbar {

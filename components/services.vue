@@ -20,7 +20,7 @@
         </div>
         <div class="flex flex-col gap-2.5">
           <div class="text-base w-full md:text-left">{{ content.spots }} Spots Left!</div>
-          <Button :content="[{ src: content.ctaLink, label: content.ctaLabel, extraClasses: '' }]"></Button>
+          <btn :content="[{ src: content.ctaLink, label: content.ctaLabel, extraClasses: '' }]"></btn>
         </div>
       </div>
     </div>
