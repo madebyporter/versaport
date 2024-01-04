@@ -4,7 +4,13 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-Make sure to install the dependencies:
+1. Clone the repo
+
+```bash
+git clone https://github.com/madebyporter/versaport.git
+```
+
+2. Make sure to install the dependencies:
 
 ```bash
 # npm
@@ -22,7 +28,7 @@ bun install
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+1. Start the development server on `http://localhost:3000`:
 
 ```bash
 # npm
@@ -40,7 +46,7 @@ bun run dev
 
 ## Production
 
-Build the application for production:
+2. Build the application for production:
 
 ```bash
 # npm
@@ -56,7 +62,7 @@ yarn build
 bun run build
 ```
 
-Locally preview production build:
+3. Locally preview production build:
 
 ```bash
 # npm
