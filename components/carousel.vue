@@ -8,7 +8,7 @@
 <template>
   <div class="overflow-hidden w-full">
     <!-- Carousel Track -->
-    <div class="section-carousel-track flex flex-row items-end gap-20 px-10 overflow-x-scroll">
+    <div class="section-carousel-track flex flex-row items-end gap-20 px-10 overflow-x-scroll z-10 relative">
       <!-- Loop: Carousel Items -->
       <div v-for="image in props.images" :key="image.src" class="flex flex-col justify-center gap-2">
         <!-- Carousel Image -->
