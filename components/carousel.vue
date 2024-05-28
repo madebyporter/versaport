@@ -13,7 +13,7 @@
       <div v-for="image in props.images" :key="image.src" class="flex flex-col justify-center gap-2">
         <!-- Carousel Image -->
         <div
-          :class="['bg-neutral-200', 'rounded-lg', 'overflow-hidden', 'min-h-[300px]', 'md:min-h-[600px]', image.extraClasses]">
+          :class="['bg-neutral-200', 'rounded-lg', 'overflow-hidden', 'min-h-[300px]', 'md:min-h-[600px]', 'drop-shadow-md', image.extraClasses]">
           <img :src="image.src" :alt="image.alt" class="w-full" />
         </div>
         <div class="flex flex-row w-full py-2 justify-between">

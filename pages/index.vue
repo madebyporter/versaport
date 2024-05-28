@@ -22,6 +22,7 @@
   })
 </script>
 
+
 <template>
   <main class="flex flex-col gap-20 md:gap-28 pb-28">
 
