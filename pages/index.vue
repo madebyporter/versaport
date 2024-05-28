@@ -1,13 +1,4 @@
 <script setup lang="ts">
-  import PageTitle from '~/components/pageTitle.vue'
-  import SectionTitle from '~/components/sectionTitle.vue'
-  import Hero from '~/components/hero.vue'
-  import Work from '~/components/work.vue'
-  import Content from '~/components/content.vue'
-  import Services from '~/components/services.vue'
-  import Testimonials from '~/components/testimonials.vue'
-  import Contact from '~/components/contact.vue'
-  
   // Set Page Title
   const pageTitle = ref('Index')
 
@@ -25,7 +16,6 @@
 
 <template>
   <main class="flex flex-col gap-20 md:gap-28 pb-28">
-
     <section class="grid grid-cols-12 gap-5 md:gap-10">
       <PageTitle 
         :title="pageTitle" 
@@ -34,7 +24,7 @@
     <section class="grid grid-cols-12 gap-5 md:gap-10">
       <Hero 
         title="Showcase your best work &amp; products quickly to the world" 
-        description="Versaport is a Nuxt3 template for independent design engineers, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
+        description="Versa Simple is a Nuxt3 template for independent design engineers, looking to get hired or obtain customers. The system's minimalism makes the work speak for itself."
       />
     </section>
     <section id="work" class="grid grid-cols-12 gap-5 md:gap-10">
@@ -47,7 +37,7 @@
     </section>
     <section id="now" class="grid grid-cols-12 gap-5 md:gap-10">
       <SectionTitle title="Now" />
-      <Content />
+      <Blog />
     </section>
     <section id="testimonials" class="grid grid-cols-12 gap-5 md:gap-10">
       <SectionTitle title="Testimonials" />

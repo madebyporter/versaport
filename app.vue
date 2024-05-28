@@ -4,7 +4,7 @@
       return titleChunk ? `${titleChunk} - Versaport` : 'Versaport';
     },
     htmlAttrs: {
-      class: 'scroll-smooth'
+      class: 'scroll-smooth bg-neutral-100'
     }
   })
 </script>
